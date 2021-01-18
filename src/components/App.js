@@ -40,31 +40,22 @@ class App extends React.Component {
     };
 
     render() {
-        return ( <
-            div className = "ui container"
-            style = {
-                { marginTop: "20px" } } >
-            <
-            SearchBar onSearch = { this.onSearchSubmit }
-            /> <
-            div className = "ui grid" >
-            <
-            div className = "ui row" >
-            <
-            div className = "eleven wide column" >
-            <
-            VideoDetail video = { this.state.SelectedVideo }
-            /> <
-            /div> <
-            div className = "five wide column" >
-            <
-            VideoList videos = { this.state.videos }
-            onVideoSelect = { this.onVideoSelect }
-            /> <
-            /div> <
-            /div> <
-            /div> <
-            /div>
+        return (
+            <div className="ui container"
+                style={
+                    { marginTop: "20px" }} >
+                <SearchBar onSearch={this.onSearchSubmit} />
+                <div className="ui grid">
+                    <div className="ui row">
+                        <div className="eleven wide column">
+                            <VideoDetail video={this.state.SelectedVideo} />
+                        </div>
+                        <div className="five wide column">
+                            <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect} />
+                        </div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
